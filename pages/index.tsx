@@ -141,7 +141,6 @@ export default function Home({ file, preview }) {
           margin: 0;
           line-height: 1.15;
           font-size: 4rem;
-          color: ${preview && 'red'};
         }
 
         .title,
