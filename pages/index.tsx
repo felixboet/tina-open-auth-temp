@@ -8,6 +8,8 @@ import {
   useGithubToolbarPlugins,
 } from 'react-tinacms-github'
 import { usePlugin } from 'tinacms'
+
+import { InlineForm, InlineText } from 'react-tinacms-inline'
 import { GetStaticProps } from 'next'
 
 export default function Home({ file, preview }) {
@@ -15,6 +17,7 @@ export default function Home({ file, preview }) {
     label: 'Home Page',
     fields: [{ name: 'title', component: 'text' }],
   }
+
 
   /*
    ** Register a JSON Tina Form
@@ -30,15 +33,11 @@ export default function Home({ file, preview }) {
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      <InlineForm form={form}>
       <main>
-        <h1 className="title">
-          {/*
-           ** Render the title from `home.json`
-           */}
-          {data.title}
-        </h1>
-
+      <h1  className="title">
+         <InlineText name="title" />
+       </h1>
         <p className="description">
           Get started by editing <code>pages/index.js</code>
         </p>
@@ -72,7 +71,7 @@ export default function Home({ file, preview }) {
             </p>
           </a>
         </div>
-      </main>
+      </main></InlineForm>
 
       <footer>
         <a
